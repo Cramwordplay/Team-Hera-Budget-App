@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <!-- seo meta tags -->
+	    <meta name="description" content="Hera: Budget page">
+        <meta name="author" content="thrive">
+        <meta name="docsearch:language" content="en">
+        <meta name="docsearch:version" content="4.3">
+	    <!-- Animate CSS -->
+	    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/fontawesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/reviews.css"/>
+	    <title>Hera: Budget History</title>
+</head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="side-pane col-sm-2 col-md-2">
+          <img class="budget-logo" src="img/logo normal.png">
+          <br>
+          <br>
+          <ul class="dashboad_nav">
+            <li> <img class="dashboard_icon" src="img/home.svg"> <a class="dashboard_link "  href="index.html"> Home</a></li>
+            <li> <img class="dashboard_icon" src="img/brick.png"> <a class="dashboard_link "  href="budget.html"> Dashboard</a></li>
+            <li> <img class="dashboard_icon" src="img/budg.png"> <a class="dashboard_link" href=""> Budget</a>
+              <ul>
+                <li> <a  class="dashboard_link small small_link" href="budget.html"> New Budget</a> </li>
+                <li> <a class="dashboard_link small small_link active" href="#" > Budget History</a> </li>
+              </ul>
+            </li>
+            <li> <img class="dashboard_icon" src="img/team.svg"> <a class="dashboard_link "  href="team.html"> The Team</a></li>
+            <li> <img class="dashboard_icon" src="img/brick.png"> <a class="dashboard_link "  href="contact.html"> Contact Us</a></li>
+            <li> <img class="dashboard_icon" src="img/brick.png"> <a class="dashboard_link "
+              href="reviews.html"> Reviews</a></li>
+            <li> <img class="dashboard_icon" src="img/brick.png"> <a class="dashboard_link "
+                href="faq.html"> FAQs</a></li>
+           <li> <img class="dashboard_icon" src="img/logout.png"> <a class="dashboard_link" href="signin.html"> Log Out</a></li>
+          </ul>
+        </div>
+
+
+        <div class=" budget-board col-md-10">
+          <div class="container">
+            <div class="row">
+            <div class="col-md-10">
+            <h1> REVIEWS</h1>
+
+            </div>
+            <div class="col-md-2">
+              <div class="name-tag">
+                 <img class="user-img" src="https://res.cloudinary.com/goldolar/image/upload/v1569331786/quicksquare_2019729124619272.jpg"> O. Samuel
+               </div>
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-md-9 history-card">
+
+                <!-- main body -->
+                <div class="container" id="new">
+                  
+                    <form id="review-form" action="#">
+                        <div class="form-intro">
+                            <h3>Product Reviews</h3>
+                        </div>
+                        <div>
+                          <label for="name">Name</label>
+                          <input  id='name' type="text" name="name" placeholder="Enter Name">
+                      </div>
+                      <div>
+                        <label for="name">Post Title</label>
+                        <input  id='title' type="text" name="title" placeholder="Enter Post Title">
+                    </div>
+                      <div>
+                          <label for="comment">Comment</label>
+                          <textarea id="msg" name="comment"></textarea>
+                      </div>
+                      <div>
+                          <button class="sub-button" type="submit">Submit</button>
+                      </div>
+                    </form>
+            
+                        <div class="divHolder">
+                            <h4 class="nameHolder">Nma</h4>
+                            <p class="parHolder">Wow! I am super impressed at the ease with which the app works.</p>
+                        </div>
+                        <div class="dynamic"></div>
+                </div>
+
+        <!-- main body -->
+
+
+            </div>
+          </div>
+
+        
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<script>
+        
+        class Review {
+    //HERE   ====== ***HERE***
+    constructor(name, title, msg) {
+      this.name = name;
+      this.msg = msg;
+
+    //HERE (Complete line)
+      this.title = title;
+    }
+}
+  
+class UI {
+    addReviewToList(review) {
+    const list = document.querySelector('.dynamic');
+
+    const div = document.createElement('div');
+    const h4 = document.createElement('h4');
+    const par = document.createElement('p');
+    const btn = document.createElement('button');
+    const btndiv = document.createElement('div');
+    
+    //HERE (Complete line)
+    const titlediv = document.createElement('h6');
+
+
+    h4.textContent = `${review.name}`;  
+    par.textContent = `${review.msg}`;
+    btn.textContent = 'Delete';
+
+    //HERE (Complete line)
+    titlediv.textContent = `${review.title}`;
+
+    div.classList.add("divHolder");
+    h4.classList.add("nameHolder");
+    par.classList.add("parHolder");
+    btn.classList.add("delete");
+    btndiv.classList.add("test");
+    
+    //HERE (Complete line)
+    titlediv.classList.add('new-title');
+
+    btndiv.appendChild(btn)
+    div.appendChild(h4);
+    
+    //HERE (Complete line)
+    div.appendChild(titlediv);
+    div.appendChild(par)
+    div.appendChild(btndiv)
+    list.appendChild(div)
+    }
+  
+    showAlert(message, className) {
+      const div = document.createElement('div');
+      div.className = `alert ${className}`;
+      div.appendChild(document.createTextNode(message));
+      const container = document.querySelector('.container');
+      const form = document.querySelector('#review-form');
+      container.insertBefore(div, form);
+  
+      setTimeout(function(){
+        document.querySelector('.alert').remove();
+      }, 3000);
+    }
+  
+    deleteReview(target) {
+      if(target.className === 'delete') {
+        target.parentElement.parentElement.remove();
+      }
+    }
+  
+    clearFields() {
+      document.getElementById('name').value = '';
+      document.getElementById('msg').value = '';
+      
+      //HERE (Complete line)
+      document.getElementById('title').value = '';
+    }
+}
+  
+class Store {
+    static getReviews() {
+      let reviews;
+      if(localStorage.getItem('reviews') === null) {
+        reviews = [];
+      } else {
+        reviews = JSON.parse(localStorage.getItem('reviews'));
+      }
+  
+      return reviews;
+    }
+  
+    static displayReviews() {
+      const reviews = Store.getReviews();
+  
+      reviews.forEach(function(review){
+        const ui  = new UI;
+  
+        ui.addReviewToList(review);
+      });
+    }
+  
+    static addReview(review) {
+      const reviews = Store.getReviews();
+  
+      reviews.push(review);
+  
+      localStorage.setItem('reviews', JSON.stringify(reviews));
+    }
+  
+    static removeReview(msg) {
+      const reviews = Store.getReviews();
+  
+      reviews.forEach(function(review, index){
+        reviews.splice(index, 1);
+
+      });
+  
+      localStorage.setItem('reviews', JSON.stringify(reviews));
+    }
+}
+  
+  document.addEventListener('DOMContentLoaded', Store.displayReviews);
+  
+  document.querySelector('.sub-button').addEventListener('click', function(e){
+    const name = document.getElementById('name').value;
+    const msg = document.getElementById('msg').value;
+    
+    //HERE (Complete line)
+    const title = document.getElementById('title').value;
+  
+    //HERE    ================  ** HERE **
+    let review = new Review(name, title, msg);  
+    const ui = new UI();
+    
+    //HERE      =============   *** HERE ***
+    if(name === '' || msg === '' || title === '') {
+      ui.showAlert('Please fill in all fields', 'error');
+    } else {
+      ui.addReviewToList(review);
+      Store.addReview(review);
+      ui.showAlert('Comment Submitted!', 'success');
+      ui.clearFields();
+    }
+  
+    e.preventDefault();
+  });
+                                    // ****Double click edit HERE**** (Change from 'click' to 'dbclick')
+  document.querySelector('.dynamic').addEventListener('dblclick' , function(e){  
+    const ui = new UI();
+    ui.deleteReview(e.target);
+    Store.removeReview(e.target.parentElement.parentElement.textContent);
+    ui.showAlert('Comment Deleted!', 'success');
+  
+    e.preventDefault();
+  });
+
+    </script>
+
+  </body>
+</html>
