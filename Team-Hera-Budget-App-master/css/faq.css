@@ -1,0 +1,44 @@
+.parallax header nav{
+  background-color: rgb(255, 255, 255) !important;
+}
+.parallax {
+  /* The image used */
+  background-image: url('../img/bg.png');
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.team .jumbotron{
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.form-faq .input-group .input-group-append span{
+  border-top-right-radius: 50rem !important;
+  border-bottom-right-radius: 50rem !important;
+  color: #ffffff !important;
+  background-color: #3264B0 !important;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.form-faq .input-group .form-control{
+  border-top-left-radius: 50rem !important;
+  border-bottom-left-radius: 50rem !important;
+}
+.form-control{
+  transition: 0.4s !important;
+}
+.form-control:focus {
+    background-color: #fff;
+    border-color: #3264B0 !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+.btn-primary{
+  background-color: #3264B0 !important;
+}
